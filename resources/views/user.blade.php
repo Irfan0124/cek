@@ -13,7 +13,7 @@
         <td>nama </td>
         <td>email</td>
         <td>password </td>
-        <td>role</td>
+        {{-- <td>role</td> --}}
         <td> </td>
     </tr>
 
@@ -25,10 +25,10 @@
     <td>{{$list->name}}</td>
     <td>{{$list->email}}</td>
     <td>{{$list->password}}</td>
-    <td>{{$list->role}}</td>
-    <td>
+    {{-- <td>{{$list->role}}</td> --}}
+    {{-- <td>
         <a href="/tampildata/{{$list->id}}" class="btn btn-primary">edit</button>
-        <a href="/deleteuser/{{$list->id}}"  class="btn btn-danger">hapus</button></td>
+        <a href="/deleteuser/{{$list->id}}"  class="btn btn-danger">hapus</button></td> --}}
 </tbody>
 @endforeach
   {{-- </table>
