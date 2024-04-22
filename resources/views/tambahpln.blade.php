@@ -9,8 +9,12 @@
           <input type="text" name="nama_pelanggan" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukan Nama"@required(true)>
         </div>
         <div class="form-group">
-          <label for="exampleInputEmail1">alamat</label>
-          <input type="text" name="alamat" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukan Alamat"@required(true)>
+          <label for="exampleInputEmail1">Alamat </label>
+          <select class="form-select" name="alamat" aria-label="Default select example">
+            <option selected>Open this select menu</option>
+            <option value="">pilih alamat</option>
+            @foreach ($alamatList as $alamat) <option value="{{ $alamat->id }}">{{ $alamat->kota }}</option> @endforeach 
+          </select>
         </div>  
         
         <div class="form-group">

@@ -6,6 +6,7 @@ use App\Models\Tes;
 use App\Models\User;
 use App\Models\Pelanggan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -16,7 +17,10 @@ class UserController extends Controller
 }
 
 public function tambahpln(){
-    return view('tambahpln');
+    $alamatList = DB::table('alamat')
+    ->select('id', 'kota')
+    ->get();
+    return view('tambahpln',compact('alamatList'));
 } 
 public function insertpln(Request $request){
     Pelanggan::create($request->all());
@@ -25,8 +29,10 @@ public function insertpln(Request $request){
 public function show($id)
 {
     $data=Pelanggan::find($id);
-   
-    return view('tampilpln',compact ('data'));// Menampilkan detail data pelanggan
+    $alamatList = DB::table('alamat')
+    ->select('id', 'kota')
+    ->get();
+    return view('tampilpln',compact ('data','alamatList'));// Menampilkan detail data pelanggan
 }
 
 public function edit($id)
